@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florybal Chocolates LTDA - Filial Gramado</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #3D1E16;      /* Chocolate Amargo */
+            --secondary: #6A382C;    /* Chocolate ao Leite */
+            --accent: #D4AF37;       /* Dourado */
+            --accent-hover: #b59328;
+            --bg-light: #FAF6F0;     /* Creme Suave */
+            --bg-card: #FFFFFF;
+            --text-dark: #2B2B2B;
+            --text-light: #666666;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-header {
+            background-color: var(--accent);
+            color: var(--primary) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-header:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(61, 30, 22, 0.85), rgba(61, 30, 22, 0.85)), 
+                        url('https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            color: #FFF;
+            padding: 6rem 2rem 8rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge-hero {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #DDD;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #FFF;
+            border: 2px solid #FFF;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #FFF;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* SERVIÇOS / DIFERENCIAIS */
+        .services {
+            max-width: 1200px;
+            margin: -4rem auto 5rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(106, 56, 44, 0.1);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--secondary);
+            color: #FFF;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* CONTAINER PRINCIPAL DA EMPRESA */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .company-info-section {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            padding: 0 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 10px;
+        }
+
+        .info-card h3 i {
+            color: var(--accent);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            width: fit-content;
+            margin-top: 4px;
+        }
+
+        /* SEÇÃO DE REDIRECIONAMENTO */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #FFF;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #DDD;
+            margin-bottom: 2rem;
+        }
+
+        /* MAPA / LOCALIZAÇÃO EM DESTAQUE */
+        .location-highlight {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .address-box {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            margin-top: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary);
+            color: #BBB;
+            padding: 3rem 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-logo {
+            color: #FFF;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-links a {
+            color: #BBB;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .services {
+                margin-top: -2rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <span class="logo-text">FLORYBAL</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicos">Principais Serviços</a></li>
+                <li><a href="#empresa">Dados do Registro</a></li>
+                <li><a href="#contato">Contatos</a></li>
+                <li>
+                    <a href="https://www.lojaflorybal.com.br/" target="_blank" class="btn-header">
+                        Loja Oficial <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge-hero">Tradição & Qualidade em Gramado</span>
+            <h1>Florybal Chocolates LTDA</h1>
+            <p>Conheça a nossa unidade no coração da Serra Gaúcha. Tradição em chocolates artesanais, experiências inesquecíveis e excelência em atendimento.</p>
+            <div class="hero-buttons">
+                <a href="https://www.lojaflorybal.com.br/" target="_blank" class="btn-primary">
+                    Acessar Loja Oficial <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="#empresa" class="btn-secondary">
+                    Ver Dados Cadastrais <i class="fa-solid fa-circle-info"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPAIS SERVIÇOS / DIFERENCIAIS -->
+    <section class="services" id="servicos">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3>Chocolates Artesanais</h3>
+                <p>Produção de chocolates de alta qualidade com receitas exclusivas e o autêntico sabor de Gramado.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <h3>Atendimento a Filiais</h3>
+                <p>Unidade de suporte e distribuição especializada para atender demandas regionais com agilidade.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <h3>Kits & Presentes</h3>
+                <p>Opções personalizadas para datas comemorativas, eventos corporativos e lembranças especiais.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3>Vendas Online & Envio</h3>
+                <p>Acesso ao catálogo completo através de nossa loja virtual com entrega para todo o Brasil.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES DE REGISTRO DA EMPRESA -->
+    <section class="company-info-section" id="empresa">
+        <div class="section-title">
+            <h2>Informações de Registro</h2>
+        </div>
+
+        <div class="info-grid">
+            <!-- Card 1: Identificação -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-id-card"></i> Identificação Jurídica</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Razão Social</span>
+                        <span class="info-value">Florybal Chocolates LTDA</span>
+                    </li>
+                    <li>
+                        <span class="info-label">CNPJ</span>
+                        <span class="info-value">93.778.066/0019-17</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Inscrição Estadual (RS)</span>
+                        <span class="info-value">056/0111991</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Tipo de Estabelecimento</span>
+                        <span class="info-value">Filial</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Status & Estrutura -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-chart-line"></i> Status & Estrutura</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Situação Cadastral</span>
+                        <span class="status-badge"><i class="fa-solid fa-check-circle"></i> Ativa</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Data de Abertura</span>
+                        <span class="info-value">26/04/2023 (3 anos, 4 meses)</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Natureza Jurídica</span>
+                        <span class="info-value">Sociedade Empresária Limitada</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Porte / Capital Social</span>
+                        <span class="info-value">Sem Enquadramento / R$ 4.000.000,00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Contato -->
+            <div class="info-card" id="contato">
+                <h3><i class="fa-solid fa-address-book"></i> Canais de Contato</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">E-mail Corporativo</span>
+                        <span class="info-value">
+                            <a href="mailto:contato@florybal.com.br" style="color: var(--secondary); text-decoration: none;">
+                                contato@florybal.com.br
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="info-label">Telefone Principal</span>
+                        <span class="info-value">
+                            <a href="tel:5439053600" style="color: var(--secondary); text-decoration: none;">
+                                (54) 3905-3600
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="info-label">Website Oficial</span>
+                        <span class="info-value">
+                            <a href="https://www.lojaflorybal.com.br/" target="_blank" style="color: var(--accent); text-decoration: underline;">
+                                www.lojaflorybal.com.br
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Localização e Correspondência -->
+        <div class="location-highlight">
+            <h3 style="color: var(--primary); font-family: 'Playfair Display', serif; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Localização e Correspondência
+            </h3>
+            <p style="color: var(--text-light);">Endereço fiscal e unidade operacional cadastrada para envios e correspondências:</p>
+
+            <div class="address-box">
+                <p><strong>Florybal Chocolates LTDA</strong></p>
+                <p>Rua Otto Herrmann, 182 — Bairro Floresta</p>
+                <p>Gramado / RS — CEP: 95671-404</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (REDIRECIONAMENTO) -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Quer experimentar nossos chocolates?</h2>
+            <p>Visite nossa loja virtual oficial e confira nossa linha completa de produtos, promoções exclusivas e entregas diretas para sua casa.</p>
+            <a href="https://www.lojaflorybal.com.br/" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">
+                Ir para a Loja Oficial da Florybal <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                Florybal Chocolates LTDA
+            </div>
+            <div class="footer-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#empresa">Dados Cadastrais</a>
+                <a href="#contato">Contato</a>
+                <a href="https://www.lojaflorybal.com.br/" target="_blank">Loja Online</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>CNPJ: 93.778.066/0019-17 | Gramado - RS</p>
+            <p style="margin-top: 5px;">&copy; 2026 Florybal Chocolates. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
